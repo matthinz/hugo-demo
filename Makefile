@@ -15,6 +15,7 @@ dev: $(HUGO_BIN) node_modules
 	$(HUGO) serve
 
 federalist: $(HUGO_BIN) node_modules
+	echo "arch is $(shell arch)"
 	$(HUGO) --baseURL ${BASEURL}
 
 $(HUGO_BIN):
