@@ -15,10 +15,10 @@ dev: $(HUGO_BIN) node_modules
 	$(HUGO) serve
 
 federalist: $(HUGO_BIN) node_modules
-	echo "arch is $(shell arch)"
 	$(HUGO) --baseURL ${BASEURL}
 
 $(HUGO_BIN):
+	echo "arch is $(shell arch)"
 	mkdir -p $(shell dirname $@)
 	curl -L $(shell bin/hugo-url) > $@.tar.gz
 	cd $(shell dirname $@) && tar xzf $(shell basename $@).tar.gz
