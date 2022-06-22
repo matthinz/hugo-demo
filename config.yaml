@@ -2,6 +2,8 @@ baseURL: http://example.org/
 languageCode: en-us
 title: Hugo demo
 
+publishDir: "_site"
+
 module:
   mounts:
     # > When you add a mount, the default mount for the concerned target root is ignored: be sure to explicitly add it.
