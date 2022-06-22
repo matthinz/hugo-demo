@@ -14,7 +14,7 @@ build: $(HUGO_BIN) node_modules
 dev: $(HUGO_BIN) node_modules
 	$(HUGO) serve
 
-federalist:
+federalist: $(HUGO_BIN) node_modules
 	$(HUGO) --baseURL ${BASEURL}
 
 $(HUGO_BIN):
