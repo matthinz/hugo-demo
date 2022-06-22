@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# This script just outputs a platform-specific URL to download Hugo binaries
+
+function _os() {
+  case `uname` in
+    "Darwin")
+      echo "macOS"
+      ;;
+    "Linux")
+      echo "Linux"
+      ;;
+    "*")
+      exit 1
+      ;;
+  esac
+}
+
+function _architecture() {
+  case `arch` in
+    "i386")
+      echo "64bit"
+      ;;
+    "arm64")
+      echo "ARM64"
+      ;;
+    "x64")
+      echo "64bit"
+      ;;
+    "*")
+      exit 1
+      ;;
+  esac
+}
+
+HUGO_VERSION=$(cat .hugo-version)
+HUGO_NUMERIC_VERSION=$(echo $HUGO_VERSION | sed 's/extended_//')
+
+echo https://github.com/gohugoio/hugo/releases/download/v${HUGO_NUMERIC_VERSION}/hugo_${HUGO_VERSION}_`_os`-`_architecture`.tar.gz
