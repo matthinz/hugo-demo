@@ -17,8 +17,10 @@ module:
     # (so we can ensure that anything referenced via `url()` in USWDS's CSS can still be found.)
     - source: "node_modules/@uswds/uswds/dist"
       target: "assets/@uswds"
-    - source: "node_modules/@uswds/uswds/dist"
-      target: "static/@uswds"
+    - source: "node_modules/@uswds/uswds/dist/fonts"
+      target: "static/@uswds/fonts"
+    - source: "node_modules/@uswds/uswds/dist/img"
+      target: "static/@uswds/img"
 
 # BEGIN Workaround to get Hugo working with asdf
 # See: https://github.com/gohugoio/hugo/issues/9811
