@@ -19,7 +19,7 @@ federalist: $(HUGO_BIN) node_modules
 
 $(HUGO_BIN):
 	mkdir -p $(shell dirname $@)
-	curl -L https://github.com/gohugoio/hugo/releases/download/v0.101.0/hugo_0.101.0_Linux-64bit.tar.gz > $@.tar.gz
+	curl -L $(shell bin/hugo-url) > $@.tar.gz
 	cd $(shell dirname $@) && tar xzf $(shell basename $@).tar.gz
 
 node_modules: package.json package-lock.json
