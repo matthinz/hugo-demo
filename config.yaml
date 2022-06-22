@@ -11,6 +11,8 @@ module:
     - source: "static"
       target: "static"
 
+    # Make USWDS files available as assets (so they can be fingerprinted etc.), but also as static files
+    # (so we can ensure that anything referenced via `url()` in USWDS's CSS can still be found.)
     - source: "node_modules/@uswds/uswds/dist"
       target: "assets/@uswds"
     - source: "node_modules/@uswds/uswds/dist"

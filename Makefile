@@ -1,6 +1,8 @@
 SASS_EMBEDDED_VERSION = 1.53.0
 SASS_EMBEDDED_URL := $(shell bin/sass_embedded_url $(SASS_EMBEDDED_VERSION))
 
+# Hugo can only use dart-sass-embedded if the binary is present on $PATH.
+# Expand $PATH for Hugo's benefit so it can use our local version of the binary.
 HUGO = PATH=bin/sass_embedded:${PATH} hugo
 
 .PHONY: build dev
