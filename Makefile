@@ -6,10 +6,14 @@ HUGO_BIN = bin/hugo
 # Expand $PATH for Hugo's benefit so it can use the version installed in node_modules
 HUGO = PATH=$(DART_SASS_EMBEDDED_DIR):${PATH} $(HUGO_BIN)
 
-.PHONY: build dev
+.PHONY: build clean dev
 
 build: $(HUGO_BIN) node_modules
 	$(HUGO)
+
+clean:
+	-rm -rf _site node_modules public
+	-rm $(HUGO_BIN)
 
 dev: $(HUGO_BIN) node_modules
 	$(HUGO) serve
@@ -20,7 +24,7 @@ federalist: $(HUGO_BIN) node_modules
 $(HUGO_BIN):
 	mkdir -p $(shell dirname $@)
 	curl -L $(shell bin/hugo-url) > $@.tar.gz
-	cd $(shell dirname $@) && tar xzf $(shell basename $@).tar.gz
+	cd $(shell dirname $@) && tar xzf $(shell basename $@).tar.gz hugo && rm $(shell basename $@).tar.gz
 
 node_modules: package.json package-lock.json
 	npm install && touch $@
