@@ -17,5 +17,5 @@ bin:
 bin/sass_embedded:
 	cd $(shell dirname $@) && curl -L $(SASS_EMBEDDED_URL) > .sass_embedded.tar.gz && tar xzf .sass_embedded.tar.gz
 
-node_modules: package.json yarn.lock
-	yarn && touch $@
+node_modules: package.json package-lock.json
+	npm install && touch $@

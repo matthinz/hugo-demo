@@ -3,3 +3,4 @@ _gen
 /bin
 /public
 node_modules
+yarn.lock
