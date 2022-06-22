@@ -6,7 +6,7 @@
   "author": "Matt Hinz <matt.hinz@gsa.gov>",
   "license": "MIT",
   "scripts": {
-    "federalist": "make build"
+    "federalist": "make federalist"
   },
   "dependencies": {
     "@uswds/uswds": "^3.0.2",
