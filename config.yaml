@@ -19,8 +19,10 @@ module:
       target: "assets/@uswds"
     - source: "node_modules/@uswds/uswds/dist/fonts"
       target: "static/@uswds/fonts"
-    - source: "node_modules/@uswds/uswds/dist/img"
-      target: "static/@uswds/img"
+    - source: "node_modules/@uswds/uswds/dist/img/usa-icons"
+      target: "static/@uswds/img/usa-icons"
+    - source: "node_modules/@uswds/uswds/dist/img/usa-icons-bg"
+      target: "static/@uswds/img/usa-icons-bg"
 
 # BEGIN Workaround to get Hugo working with asdf
 # See: https://github.com/gohugoio/hugo/issues/9811
