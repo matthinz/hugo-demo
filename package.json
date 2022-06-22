@@ -5,6 +5,9 @@
   "repository": "git@github.com:matthinz/hugo-demo.git",
   "author": "Matt Hinz <matt.hinz@gsa.gov>",
   "license": "MIT",
+  "scripts": {
+    "federalist": "make build"
+  },
   "dependencies": {
     "@uswds/uswds": "^3.0.2"
   },
