@@ -1,0 +1,5 @@
+@use "uswds-core" with (
+  $theme-font-path: "/@uswds/fonts",
+  $theme-image-path: "/@uswds/img",
+  $theme-show-compile-warnings: true
+);

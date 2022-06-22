@@ -1,0 +1,22 @@
+{
+  "name": "hugo-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:matthinz/hugo-demo.git",
+  "author": "Matt Hinz <matt.hinz@gsa.gov>",
+  "license": "MIT",
+  "dependencies": {
+    "@uswds/uswds": "^3.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "prettier": "2.7.1"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "private": true
+}

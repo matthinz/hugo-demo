@@ -1,0 +1,5 @@
+{{ $uswds := (resources.Get "@uswds/js/uswds.min.js" | resources.Fingerprint) }}
+<script src="{{ $uswds.RelPermalink }}" integrity="{{ $uswds.Data.Integrity }}"></script>
+
+{{ $app := (resources.Get "js/app.js" | js.Build | resources.Minify | resources.Fingerprint)}}
+<script src="{{ $app.RelPermalink }}" integrity="{{ $app.Data.Integrity }}"></script>

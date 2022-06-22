@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
-<title>{{.Title}}</title>
-<body>
-    Hello from layouts/index.html
-    {{ .Content }}
-</body>
+  <head>
+    <title>{{.Title}}</title>
+    {{ partial "head/styles" . }}
+    {{ partial "head/scripts" . }}
+  </head>
+  <body>
+    {{ partial "banner" . }}
+
+    {{ partial "header" . }}
+
+    <div class="grid-container">{{ .Content }}</div>
+
+    {{ partial "footer" . }}
+
+    {{ partial "foot/scripts" . }}
+
+  </body>
 </html>
