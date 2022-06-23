@@ -1,0 +1,5 @@
+@use "uswds" as *;
+
+.usa-sidenav__item > #TableOfContents > ul {
+  @extend .usa-sidenav__sublist;
+}
