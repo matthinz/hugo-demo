@@ -1,6 +1,6 @@
 # Hugo demo
 
-This is a demo Hugo site using the US Web Design System.
+This is a demo [Hugo](https://gohugo.io) website built using the US Web Design System.
 
 ## Notes / errata / things to do
 

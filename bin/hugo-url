@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # This script just outputs a platform-specific URL to download Hugo binaries
 
-function _os() {
+_os() {
   case `uname` in
     "Darwin")
       echo "macOS"
@@ -16,7 +16,7 @@ function _os() {
   esac
 }
 
-function _architecture() {
+_architecture() {
   case `arch` in
     "i386")
       echo "64bit"

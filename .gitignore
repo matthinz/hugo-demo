@@ -1,5 +1,7 @@
 _gen
 _site
+.bin
+.docker-image
 .DS_Store
 .hugo_build.lock
 /bin
