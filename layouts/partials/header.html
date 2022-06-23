@@ -2,7 +2,7 @@
   <div class="usa-nav-container">
     <div class="usa-navbar">
       <div class="usa-logo" id="-logo">
-        <em class="usa-logo__text"><a href="/" title="Home">Home</a></em>
+        <em class="usa-logo__text"><a href="{{ (.Site.GetPage "/").RelPermalink }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a></em>
       </div>
       <button class="usa-menu-btn">Menu</button>
     </div>
