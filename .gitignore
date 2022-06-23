@@ -1,5 +1,6 @@
 _gen
 _site
+.DS_Store
 .hugo_build.lock
 /bin
 /public

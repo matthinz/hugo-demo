@@ -1,0 +1,17 @@
+{{ $section := .GetPage .Section }}
+<nav aria-label="Side navigation">
+  <ul class="usa-sidenav">
+    <li class="usa-sidenav__item">
+      <a href="{{ .RelPermalink }}" class="usa-current">{{ $section.Title }}</a>
+      <ul class="usa-sidenav__sublist">
+        {{ $current_page := . }}
+        {{ range $section.Pages }}
+          {{ $is_current := (eq .Permalink $current_page.Permalink) }}
+          <li class="usa-sidenav__item">
+            <a href="{{ .RelPermalink }}"{{ if $is_current }} class="usa-current"{{ end }}>{{ .Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </li>
+  </ul>
+</nav>

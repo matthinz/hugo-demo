@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="grid-row grid-gap">
+  <aside class="grid-col-4">
+    {{ partial "sidenav" (.GetPage .Section) }}
+  </aside>
+  <main class="grid-col-8">
+    {{ .Content }}
+  </main>
+</div>
+{{ end }}

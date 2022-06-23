@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{ block "title" . }}
+        {{.Title}}
+      {{ end }}
+    </title>
+    {{ partial "head/styles" . }}
+    {{ partial "head/scripts" . }}
+  </head>
+  <body>
+
+    {{ partial "banner" . }}
+
+    {{ partial "header" . }}
+
+    <div class="grid-container">
+
+      {{ block "main" . }}
+      {{ end }}
+
+    </div>
+
+    {{ partial "footer" . }}
+
+    {{ partial "foot/scripts" . }}
+
+  </body>
+</html>

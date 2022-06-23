@@ -16,7 +16,7 @@ clean:
 	-rm $(HUGO_BIN)
 
 dev: $(HUGO_BIN) node_modules
-	$(HUGO) serve
+	$(HUGO) serve --buildDrafts --noHTTPCache
 
 federalist: $(HUGO_BIN) node_modules
 	$(HUGO) --baseURL ${BASEURL}
