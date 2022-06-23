@@ -2,20 +2,22 @@
 {{ if not .IsSection }}
   {{ $section = .GetPage .Section }}
 {{ end }}
-<nav aria-label="Side navigation">
-  <ul class="usa-sidenav">
-    <li class="usa-sidenav__item">
-      <a href="{{ $section.Permalink }}"{{ if eq .Permalink $section.Permalink }} class="usa-current"{{ end }}>{{ $section.Title }}</a>
-    </li>
-    {{ $current_page := . }}
-    {{ range $section.Pages }}
-      {{ $is_current := (eq .Permalink $current_page.Permalink) }}
+{{ if $section }}
+  <nav aria-label="Side navigation">
+    <ul class="usa-sidenav">
       <li class="usa-sidenav__item">
-        <a href="{{ .RelPermalink }}"{{ if $is_current }} class="usa-current"{{ end }}>{{ .Title }}</a>
-        {{ if $is_current }}
-          {{ .TableOfContents }}
-        {{ end }}
+        <a href="{{ $section.Permalink }}"{{ if eq .Permalink $section.Permalink }} class="usa-current"{{ end }}>{{ $section.Title }}</a>
       </li>
-    {{ end }}
-  </ul>
-</nav>
+      {{ $current_page := . }}
+      {{ range $section.Pages }}
+        {{ $is_current := (eq .Permalink $current_page.Permalink) }}
+        <li class="usa-sidenav__item">
+          <a href="{{ .RelPermalink }}"{{ if $is_current }} class="usa-current"{{ end }}>{{ .Title }}</a>
+          {{ if $is_current }}
+            {{ .TableOfContents }}
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+{{ end }}
